@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/template.xhtml">
+
+            <ui:define name="content" class="center_content">
+                <p:growl id="growl" showDetail="true" sticky="true" /> 
+                <h:form> 
+
+                     <h2> Adicionar Projecto</h2> 
+                        <h:panelGrid columns="2" columnClasses="p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4, p-col-12 p-md-3 p-xl-2, p-col-12 p-md-9 p-xl-4">
+                            <p:outputLabel value="Nome do Projecto:"/>
+                            <p:inputText  id="nome" value="#{projectoBean.projecto.nomeProjecto}"/>
+
+                            <p:outputLabel value="Custo do Projecto:" />
+                            <p:inputNumber id="custo" value="#{projectoBean.projecto.custoProjecto}" type="currency">
+
+                            </p:inputNumber>
+                            <p:outputLabel value="Data de Início:" />
+                            <p:datePicker id="dataInicio" value="#{projectoBean.projecto.dataInicio}" pattern ="dd/MM/yyyy" showIcon="true"/>
+
+                            <p:outputLabel value="Data de Término:" />
+                            <p:datePicker id="dataTermino" value="#{projectoBean.projecto.dataTermino}" pattern ="dd/MM/yyyy" showIcon="true"/>
+
+                            <p:outputLabel value="Provincia: *" />
+                            <p:selectOneMenu id="provincia" value="#{localidadeBean.provincia}" required="true" requiredMessage="Campo obrigatório" converter="provinciaConverter" style="width: 250px;" >
+                                <f:selectItem itemLabel="Selecione" noSelectionOption="true"/>
+                                <f:selectItems value="#{localidadeBean.selectProvincias}" />
+                                <f:ajax render="municipio" event="change" listener="#{localidadeBean.listaMunicipiosDaProvincia}" />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Municipio:*" />
+                            <p:selectOneMenu id="municipio" value="#{projectoBean.projecto.municipio}" converter="municipioConverter" style="width: 250px;" >
+                                <f:selectItem itemLabel="Selecione" noSelectionOption="true"/>
+                                <f:selectItems value="#{localidadeBean.municipios}" var="m" itemValue="#{m}" itemLabel="#{m.nomeMunicipio}"/>
+                            </p:selectOneMenu>
+
+
+                            <p:outputLabel value="Sector:" />
+                            <p:selectOneMenu id="sector" value="#{projectoBean.projecto.sector}" converter="sectorConverter" filter="true" style="width:150px">
+                                <f:selectItem itemLabel="Selecione" noSelectionOption="true"/>
+                                <f:selectItems value="#{sectorBean.selectSectores}"/>
+                            </p:selectOneMenu>
+
+
+                        </h:panelGrid>
+                    
+                     <p:commandButton value="Guardar" action="#{projectoBean.guardar}" ajax="false" update="@form" icon="ui-icon-disk"/>
+
+
+                </h:form>
+                
+                   
+              
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

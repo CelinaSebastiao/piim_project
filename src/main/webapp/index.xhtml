@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <body>
+
+        <ui:composition template="./WEB-INF/template.xhtml">
+
+            <ui:define name="content">
+                <p:panelGrid>
+                <!--<p:graphicImage library="Imagens" name="1.jpg"/>!-->
+                <b:carousel id="parque" style="margin-top: 10px; height: 500px">
+                    <b:carouselItem style="margin-top: 200px;">
+                        <p:graphicImage library="Imagens" name="1.jpg" style="margin-top:-280px;height:580px;width: 1250px;"/>
+                    </b:carouselItem>
+                    <b:carouselItem style="margin-top: 200px;">
+                        
+                    </b:carouselItem>
+                    <b:carouselItem style="margin-top: 200px;">
+                        
+                    </b:carouselItem>
+                </b:carousel>
+                </p:panelGrid>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

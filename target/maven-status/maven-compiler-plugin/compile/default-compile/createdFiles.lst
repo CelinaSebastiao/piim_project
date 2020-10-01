@@ -1,0 +1,16 @@
+piim\app\JAXRSConfiguration.class
+piim\dao\MunicipioDAO.class
+piim\dao\ProjectoDAO.class
+piim\dao\SectorDAO.class
+piim\modelo\Projecto.class
+piim\converters\SectorConverter.class
+piim\controlo\ProjectoBean.class
+piim\converters\ProvinciaConverter.class
+piim\util\ConexaoDB.class
+piim\modelo\Provincia.class
+piim\app\resources\JavaEE8Resource.class
+piim\modelo\Municipio.class
+piim\dao\ProvinciaDAO.class
+piim\controlo\SectorBean.class
+piim\converters\MunicipioConverter.class
+piim\modelo\Sector.class
