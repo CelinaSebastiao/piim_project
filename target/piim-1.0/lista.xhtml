@@ -12,18 +12,14 @@
 
             <ui:define name="content" class="center_content">
                 
-                <p:panelGrid> 
-                    <p:growl id="growl" showDetail="true" sticky="true" />  
-                    <h2> Projectos </h2> 
-                    <h:form id="dtBuscaMunicipios">
-                        
+                <p:panelGrid style="margin-left:155px;">
+                     
+                    
+                    <h:form>
+                        <p:growl id="growl" showDetail="true" />  
+                         <h2>Projectos</h2><br></br>
                         <p:dataTable value="#{projectoBean.projectos}" var="m">
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputLabel value="Id"/>
-                                </f:facet>
-                                <h:outputText value="#{m.idProjecto}"/>
-                            </p:column>
+
                             <p:column>
                                 <f:facet name="header">
                                     <h:outputLabel value="Projecto"/>
@@ -38,32 +34,32 @@
                             </p:column>
                             <p:column>
                                 <f:facet name="header">
-                                    <h:outputLabel value="Data Inicio"/>
-                                </f:facet>
-                                <h:outputText value="#{m.dataInicio}"/>
-                            </p:column>
-                            <p:column>
-                                <f:facet name="header">
-                                    <h:outputLabel value="Data Termino"/>
-                                </f:facet>
-                                <h:outputText value="#{m.dataTermino}"/>
-                            </p:column>
-
-                            <p:column>
-                                <f:facet name="header">
                                     <h:outputLabel value="Sector"/>
                                 </f:facet>
                                 <h:outputText value="#{m.sector.nomeSector}"/>
                             </p:column>
                             <p:column>
                                 <f:facet name="header">
-                                    <h:outputLabel value="Municipio"/>
+                                    <h:outputLabel value="Município"/>
                                 </f:facet>
                                 <h:outputText value="#{m.municipio.nomeMunicipio}"/>
                             </p:column>
+                            <p:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Província"/>
+                                </f:facet>
+                                <h:outputText value="#{m.municipio.provincia.nomeProvincia}"/>
+                            </p:column>
+                            <f:facet name="footer">
+                                
+                                    <h:outputText value="Total de Dados:"/>
+                                    <h:outputText value="#{projectoBean.projectos.size()}"/>
+                                
+                            </f:facet>
                         </p:dataTable>
                     </h:form>
                 </p:panelGrid>
+                
             </ui:define>
 
         </ui:composition>

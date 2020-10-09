@@ -9,20 +9,32 @@
 
         <ui:composition template="./WEB-INF/template.xhtml">
 
-            <ui:define name="content">
+            <ui:define name="content" class="center_content">
                 <p:panelGrid>
-                <!--<p:graphicImage library="Imagens" name="1.jpg"/>!-->
-                <b:carousel id="parque" style="margin-top: 10px; height: 500px">
-                    <b:carouselItem style="margin-top: 200px;">
-                        <p:graphicImage library="Imagens" name="1.jpg" style="margin-top:-280px;height:580px;width: 1250px;"/>
-                    </b:carouselItem>
-                    <b:carouselItem style="margin-top: 200px;">
-                        
-                    </b:carouselItem>
-                    <b:carouselItem style="margin-top: 200px;">
-                        
-                    </b:carouselItem>
-                </b:carousel>
+                    
+                    <b:carousel id="parque" style="margin-left:155px;width:1200px;height:450px;">
+                        <b:carouselItem>
+                            <p:graphicImage library="Imagens" name="img1.jpg"/>
+                            <b:carouselCaption>
+                                <h2 style="margin-top:-230px;color:#fff">Construção de Estradas!</h2>
+                                <p style="color:#fff">Projectos do PIIM</p>
+                            </b:carouselCaption>
+                        </b:carouselItem>
+                        <b:carouselItem>
+                            <p:graphicImage library="Imagens" name="img2.jpg"/>
+                            <b:carouselCaption>
+                                <h2 style="margin-top:-230px;color:#fff">Agricultura!</h2>
+                                <p style="color:#fff">Projectos do PIIM</p>
+                            </b:carouselCaption>
+                        </b:carouselItem>
+                        <b:carouselItem>
+                            <p:graphicImage library="Imagens" name="img3.jpg"/>
+                            <b:carouselCaption>
+                                <h2 style="margin-top:-230px;color:#fff">Novas Escolas!</h2>
+                                <p style="color:#fff">Mais Escolas para as nossas Crianças</p>
+                            </b:carouselCaption>
+                        </b:carouselItem>
+                    </b:carousel>
                 </p:panelGrid>
             </ui:define>
 

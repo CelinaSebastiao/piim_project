@@ -73,7 +73,7 @@ CREATE TABLE `projecto` (
 
 LOCK TABLES `projecto` WRITE;
 /*!40000 ALTER TABLE `projecto` DISABLE KEYS */;
-INSERT INTO `projecto` VALUES (11,'Escola',7000800,'2020-07-21','2022-07-21',9,2),(12,'Biblioteca Comunitária',60002000,'2019-09-13','2020-09-21',9,10),(13,'Construcao de Hospital',230007000,'2019-10-31','2024-10-31',15,15);
+INSERT INTO `projecto` VALUES (11,'Escola',7000800,'2020-07-21','2022-07-21',9,2),(12,'Biblioteca Comunitária',6000200,'2019-09-13','2020-09-21',9,10),(13,'Construcao de Hospital',23000700,'2019-10-31','2024-10-31',15,15);
 /*!40000 ALTER TABLE `projecto` ENABLE KEYS */;
 UNLOCK TABLES;
 
